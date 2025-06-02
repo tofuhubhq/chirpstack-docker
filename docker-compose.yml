@@ -12,7 +12,7 @@ services:
       - REDIS_HOST=redis
       - POSTGRESQL_HOST=postgres
     env_file:
-      - /var/chirpstack.env
+      - ../../var/chirpstack/chirpstack.env 
     ports:
       - "8080:8080"
 
