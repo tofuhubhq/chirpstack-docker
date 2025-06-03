@@ -5,6 +5,7 @@ services:
     restart: unless-stopped
     volumes:
       - ./configuration/chirpstack:/etc/chirpstack
+      - /var/chirpstack/ca_certificate.crt:/var/chirpstack/ca_certificate.crt
     depends_on:
       - redis
     environment:
