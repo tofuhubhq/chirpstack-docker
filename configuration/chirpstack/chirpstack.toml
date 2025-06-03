@@ -33,6 +33,7 @@
   # pool (0 = equal to max_open_connections).
   min_idle_connections=0
 
+  ca_cert="/var/chirpstack/ca-certificate.crt"
 
 # Redis configuration.
 [redis]
