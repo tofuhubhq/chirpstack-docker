@@ -6,10 +6,6 @@ services:
     volumes:
       - ./configuration/chirpstack:/etc/chirpstack
       - /var/chirpstack/ca-certificate.crt:/var/chirpstack/ca-certificate.crt
-    depends_on:
-      - redis
-    environment:
-      - REDIS_HOST=redis
     env_file:
       - ../../var/chirpstack/chirpstack.env 
     ports:
@@ -36,13 +32,3 @@ services:
   #     - "3001:3001"
   #   volumes:
   #     - ./configuration/chirpstack-gateway-bridge:/etc/chirpstack-gateway-bridge
-
-  redis:
-    image: redis:7-alpine
-    restart: unless-stopped
-    command: redis-server --save 300 1 --save 60 100 --appendonly no
-    volumes:
-      - redisdata:/data
-
-volumes:
-  redisdata:
